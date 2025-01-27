@@ -1,20 +1,11 @@
-/**
- * @copyright 2024 codewithsadee
- * @license Apache-2.0
- */
-
-/**
- * Node modules
- */
 import { useState } from "react";
-
-/**
- * Components
- */
-import { Navbar } from "./Navbar";
+import { Navbar } from "../Navbar";
+import { Languages } from "../Languages";
 
 export const Header = () => {
+  
   const [navOpen, setNavOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 w-full h-20 flex items-center z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0">
@@ -43,14 +34,17 @@ export const Header = () => {
           <Navbar navOpen={navOpen} />
         </div>
 
-        <div>
-          <button className="hidden md:block" onClick={() => setLanguage("es")}>
-            Español
+        <div className="relative md:justify-self-end">
+          <button
+            className="menu-btn md:hidden"
+            onClick={() => setLangOpen((prev) => !prev)}
+          >
+            <span className="material-symbols-rounded">
+              {langOpen ? "close" : "language"}
+            </span>
           </button>
 
-          <button className="hidden md:block" onClick={() => setLanguage("en")}>
-            English
-          </button>
+          <Languages langOpen={langOpen} />
         </div>
       </div>
     </header>

@@ -35,7 +35,7 @@ const hrefs: HrefButtonInterface[] = [
 
 export const Hero = () => {
   return (
-    <section id="home" className="pt-28 lg:pt-32 pb-10">
+    <section id="home" className="pt-28 lg:pt-32 pb-8">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <span className="text-sky-400 lg:text-lg tracking-wide">

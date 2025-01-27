@@ -11,14 +11,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 /**
  * Components
  */
-import { Header } from "../components/Header";
 import { Skill } from "../components/Skill";
 import { Work } from "../components/Work";
 import { Review } from "../components/Review";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 
-import { Hero, About } from "../components";
+import { Header, Hero, About } from "../components";
 
 export const MainPage = () => {
   useGSAP(() => {
