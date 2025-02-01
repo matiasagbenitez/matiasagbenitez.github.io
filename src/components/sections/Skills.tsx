@@ -7,7 +7,7 @@ export const Skills = () => {
   const [allOpen, setAllOpen] = useState(false); // Estado global para abrir/cerrar todos
 
   return (
-    <section className="py-6">
+    <section id="skills" className="py-3">
       <div className="container">
         <div className="flex justify-between items-center">
           <h2 className="headline-2">{skillsTitles[lang].title}</h2>

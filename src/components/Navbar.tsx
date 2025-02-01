@@ -1,20 +1,17 @@
-/**
- * @copyright 2024 codewithsadee
- * @license Apache-2.0
- */
-
-/**
- * Node modules
- */
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import { LangContext } from "../context/lang";
 
 interface NavbarProps {
   navOpen: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ navOpen }) => {
+  const { lang } = useContext(LangContext);
+
   const lastActiveLink = useRef<HTMLAnchorElement | null>(null);
   const activeBox = useRef<HTMLDivElement | null>(null);
+
+  const sections = useRef<NodeListOf<HTMLElement> | null>(null);
 
   const initActiveBox = () => {
     if (activeBox.current && lastActiveLink.current) {
@@ -33,46 +30,42 @@ export const Navbar: React.FC<NavbarProps> = ({ navOpen }) => {
     };
   }, []);
 
-  const activeCurrentLink = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    lastActiveLink.current?.classList.remove("active");
-    event.currentTarget.classList.add("active");
-    lastActiveLink.current = event.currentTarget;
+  useEffect(() => {
+    initActiveBox();
+  }, [lang]);
 
-    if (activeBox.current) {
-      activeBox.current.style.top = `${event.currentTarget.offsetTop}px`;
-      activeBox.current.style.left = `${event.currentTarget.offsetLeft}px`;
-      activeBox.current.style.width = `${event.currentTarget.offsetWidth}px`;
-      activeBox.current.style.height = `${event.currentTarget.offsetHeight}px`;
+  const handleScroll = () => {
+    sections.current = document.querySelectorAll("section");
+    let currentSection = "";
+    
+    sections.current.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        currentSection = section.id;
+      }
+    });
+
+    const currentLink = document.querySelector(`a[href="#${currentSection}"]`) as HTMLAnchorElement;
+    if (currentLink && currentLink !== lastActiveLink.current) {
+      lastActiveLink.current?.classList.remove("active");
+      currentLink.classList.add("active");
+      lastActiveLink.current = currentLink;
+      initActiveBox();
     }
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const navItems = [
-    {
-      label: "Home",
-      link: "#home",
-      className: "nav-link active",
-      ref: lastActiveLink,
-    },
-    {
-      label: "About",
-      link: "#about",
-      className: "nav-link",
-    },
-    {
-      label: "Work",
-      link: "#work",
-      className: "nav-link",
-    },
-    {
-      label: "Reviews",
-      link: "#reviews",
-      className: "nav-link",
-    },
-    {
-      label: "Contact",
-      link: "#contact",
-      className: "nav-link md:hidden",
-    },
+    { label: { en: "Home", es: "Inicio" }, link: "#home", className: "nav-link active", ref: lastActiveLink },
+    { label: { en: "About", es: "Sobre mí" }, link: "#about", className: "nav-link" },
+    { label: { en: "Skills", es: "Habilidades" }, link: "#skills", className: "nav-link" },
   ];
 
   return (
@@ -83,9 +76,12 @@ export const Navbar: React.FC<NavbarProps> = ({ navOpen }) => {
           key={key}
           ref={ref as React.RefObject<HTMLAnchorElement>}
           className={className}
-          onClick={activeCurrentLink}
+          onClick={(event) => {
+            event.preventDefault();
+            document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
-          {label}
+          {label[lang]}
         </a>
       ))}
       <div className="active-box" ref={activeBox}></div>

@@ -1,74 +1,41 @@
-interface HrefButtonInterface {
-  label: string;
-  href: string;
-  icon: string;
-  blank?: boolean;
-  showLabel?: boolean;
-}
-
-const hrefs: HrefButtonInterface[] = [
-  {
-    label: "Email",
-    href: "mailto:matiasagbenitez@gmail.com",
-    blank: false,
-    icon: "fa-regular fa-envelope",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/matiasagbenitez",
-    blank: true,
-    icon: "fa-brands fa-github",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/matiasagbenitez/",
-    blank: true,
-    icon: "fa-brands fa-linkedin",
-  },
-  {
-    label: "Scroll down",
-    href: "#about",
-    blank: false,
-    icon: "fa-solid fa-arrow-down",
-  },
-];
+import { useContext } from "react";
+import { heroData, heroHrefs } from "../../data/hero";
+import { LangContext } from "../../context/lang";
 
 export const Hero = () => {
+  const { lang } = useContext(LangContext);
   return (
-    <section id="home" className="pt-28 lg:pt-32 pb-8">
+    <section id="home" className="pt-24 lg:pt-28 pb-8">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
           <span className="text-sky-400 lg:text-lg tracking-wide">
-            Bienvenido a mi portfolio!
+            {heroData[lang].welcome}
           </span>
 
           <h2 className="text-4xl lg:text-6xl font-bold my-8">
-            Hola! Mi nombre es <b className="text-sky-400">Matías.</b>
+            {heroData[lang].title}{" "}
+            <b className="text-sky-400">{heroData[lang].name}</b>
           </h2>
 
           <div className="my-10">
             <p className="text-lg lg:text-xl text-zinc-400 my-8">
-              Licenciado en Sistemas de Información.{" "}
-              <b className="text-sky-400">
-                Desarrollador web full stack en la nube
-              </b>{" "}
-              con experiencia en el desarrollo de soluciones completas:
-              planificación, análisis, diseño, desarrollo, pruebas e
-              implementación.
+              {heroData[lang].subtitle}{" "}
+              <b className="text-sky-400">{heroData[lang].subtitle2}</b>{" "}
+              {heroData[lang].subtitle3}
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-8">
             <button
               className="btn btn-primary py-2 px-4 rounded-xl"
-              onClick={() => window.open("/docs/cv-es.pdf", "_blank")}
+              onClick={() => window.open(`/docs/cv-${lang}.pdf`, "_blank")}
             >
-              Download CV
+              {heroData[lang].download}
               <i className="fas fa-download text-lg"></i>
             </button>
 
             <div className="flex items-center gap-3">
-              {hrefs.map(({ label, href, icon, blank, showLabel }, key) => (
+              {heroHrefs.map(({ label, href, icon, blank, showLabel }, key) => (
                 <a
                   key={key}
                   href={href}

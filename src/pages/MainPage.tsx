@@ -12,11 +12,10 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
  * Components
  */
 import { Work } from "../components/Work";
-import { Review } from "../components/Review";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 
-import { Header, Hero, About, Skills } from "../components";
+import { Header, Hero, About, Skills, SoftSkills } from "../components";
 
 export const MainPage = () => {
   useGSAP(() => {
@@ -42,11 +41,11 @@ export const MainPage = () => {
     <ReactLenis root>
       <Header />
       <main>
-        <Hero />
+        <Hero /> 
         <About />
         <Skills />
+        <SoftSkills />
         <Work />
-        <Review />
         <Contact />
       </main>
       <Footer />

@@ -20,7 +20,7 @@ interface SkillsTitles {
 
 export const skillsTitles: Record<LangType, SkillsTitles> = {
     en: {
-        title: "Techincal skills",
+        title: "Technical skills",
         subtitle: "These are some of the technologies and tools I have worked with and can use in your projects.",
     },
     es: {
