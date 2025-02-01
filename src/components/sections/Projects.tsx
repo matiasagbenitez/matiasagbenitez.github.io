@@ -12,7 +12,7 @@ export const Projects = () => {
 
         <p className="text-zinc-400 mt-3 mb-5">{projectsTitles[lang].subtitle}</p>
 
-        <div className="grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
           {projectsList.map((project, key) => (
             <ProjectCard key={key} project={project} />
           ))}

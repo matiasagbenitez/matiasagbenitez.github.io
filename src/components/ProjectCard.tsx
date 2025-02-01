@@ -18,6 +18,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     description,
     projectLink,
     githubLink,
+    resourceLink,
   } = project;
 
   return (
@@ -42,14 +43,20 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             {subtitle && <p className="text-zinc-400 mb-2">{subtitle[lang]}</p>}
 
             {tags && (
-              <div className="flex flex-wrap gap-2">
-                {tags.slice(0, 4).map((tag, index) => (
-                  <span
+              <div className="flex flex-wrap gap-2 mt-2">
+                {tags.slice(0, 5).map((tag, index) => (
+                  <figure
+                    className="bg-zinc-700/50 rounded-lg overflow-hidden w-9 h-9 p-2 group-hover:bg-zinc-900 transition-colors"
                     key={index}
-                    className="h-7 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg"
+                    title={tag}
                   >
-                    {tag}
-                  </span>
+                    <img
+                      src={`/images/skills/${tag}.svg`}
+                      width={24}
+                      height={24}
+                      alt={tag}
+                    />
+                  </figure>
                 ))}
               </div>
             )}
@@ -85,14 +92,20 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               <h1 className="text-3xl font-bold mb-3">{title}</h1>
 
               {tags && (
-                <div className="flex flex-wrap gap-2 my-3">
-                  {tags.map((tag, index) => (
-                    <span
+                <div className="flex flex-wrap gap-2 my-2">
+                  {tags.slice(0, 5).map((tag, index) => (
+                    <figure
+                      className="bg-zinc-700/50 rounded-lg overflow-hidden w-9 h-9 p-2 group-hover:bg-zinc-900 transition-colors"
                       key={index}
-                      className="h-7 text-sm text-zinc-400 bg-zinc-50/5 grid items-center px-3 rounded-lg"
+                      title={tag}
                     >
-                      {tag}
-                    </span>
+                      <img
+                        src={`/images/skills/${tag}.svg`}
+                        width={24}
+                        height={24}
+                        alt={tag}
+                      />
+                    </figure>
                   ))}
                 </div>
               )}
@@ -114,6 +127,17 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 >
                   {lang === "en" ? "Close" : "Cerrar"}
                 </button>
+
+                {resourceLink && (
+                  <a
+                    href={resourceLink}
+                    target="_blank"
+                    className="bg-zinc-50/5 px-4 py-2 rounded-lg text-zinc-400 hover:bg-zinc-50/10"
+                  >
+                    <i className="fa-solid fa-paperclip me-2"></i>
+                    {lang === "en" ? "Resource" : "Recurso"}
+                  </a>
+                )}
 
                 {githubLink && (
                   <a
