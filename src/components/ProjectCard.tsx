@@ -75,7 +75,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             onClick={() => setShowModal(false)}
           >
             <motion.div
-              className="bg-zinc-800 p-6 rounded-lg shadow-lg w-[90%] max-w-[700px] relative"
+              className="bg-zinc-800 p-6 rounded-lg shadow-lg w-[90%] max-w-[700px] relative overflow-y-auto"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
@@ -92,8 +92,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               <h1 className="text-3xl font-bold mb-3">{title}</h1>
 
               {tags && (
-                <div className="flex flex-wrap gap-2 my-2">
-                  {tags.slice(0, 5).map((tag, index) => (
+                <div className="flex flex-wrap gap-2 my-3">
+                  {tags.map((tag, index) => (
                     <figure
                       className="bg-zinc-700/50 rounded-lg overflow-hidden w-9 h-9 p-2 group-hover:bg-zinc-900 transition-colors"
                       key={index}
@@ -111,7 +111,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               )}
 
               {description && (
-                <div className="text-zinc-400 mb-4">
+                <div className="text-zinc-400 mb-4 text-sm lg:text-base max-h-[550px] overflow-y-auto">
                   {description[lang].map((paragraph, index) => (
                     <p key={index} className="mb-2">
                       {paragraph}

@@ -35,6 +35,31 @@ export interface Project {
 }
 
 export const projectsList: Project[] = [
+    // SJM
+    {
+        imgSrc: "/images/projects/sjm.png",
+        title: "Bespoke Web ERP",
+        subtitle: {
+            en: "A fully customized ERP for managing bespoke furniture production.",
+            es: "Un ERP web personalizado para gestionar la producción de muebles a medida.",
+        },
+        tags: ["typescript", "expressjs", "mysql", "react", "s3", "cloudflare", "nodejs", "bootstrap", "axios", "webhooks", "slack", "nginx", "ubuntu"],
+        description: {
+            en: [
+                "This project was developed with the goal of learning how to use the OpenAI API. It is a web application that allows interaction with different OpenAI language models and visualizes the generated responses. React.js was used for the frontend and NestJS for the backend.",
+                "Among its features, it includes a spell checker that helps improve the writing of entered texts. It also has a topic comparator, which analyzes the pros and cons of one or more topics, with the option to visualize the results in real-time via streaming. Additionally, it offers a text translator, facilitating text conversion between different languages.",
+                "The application enables content generation in various formats, including a text-to-audio generator and an audio-to-text generator, efficiently converting information between different mediums. It also incorporates an image generator, an image variation function to create alternative versions from an original, and an image editing tool through an interactive editor.",
+                "As an additional feature, it integrates a virtual assistant that answers general questions and provides information on various topics. The assistant can maintain a fluent conversation and respond to queries accurately, thanks to OpenAI's text generation capabilities."
+            ],
+            es: [
+                "Este proyecto fue desarrollado con el objetivo de aprender a utilizar la API de OpenAI. Se trata de una aplicación web que permite interactuar con distintos modelos de lenguaje de OpenAI y visualizar las respuestas generadas. Para su desarrollo, se utilizaron React.js en el frontend y NestJS en el backend.",
+                "Entre sus funcionalidades, cuenta con un corrector ortográfico que permite mejorar la escritura de los textos ingresados. También incluye un comparador de temas, que analiza los pros y contras de uno o más temas, con la opción de visualizar los resultados en tiempo real mediante streaming. Además, ofrece un traductor de texto, facilitando la conversión de textos entre distintos idiomas.",
+                "La aplicación permite la generación de contenido en distintos formatos, incluyendo un generador de audio a partir de texto y un generador de texto a partir de audio, que convierten información de un medio a otro de manera eficiente. También incorpora un generador de imágenes, una función de variación de imágenes para crear versiones alternativas a partir de una original, y una herramienta de edición de imágenes a través de un editor interactivo.",
+                "Como característica adicional, integra un asistente virtual que responde a preguntas generales y proporciona información sobre distintos temas. El asistente es capaz de mantener una conversación fluida y responder a consultas de manera precisa, gracias a la capacidad de generación de texto de OpenAI.",
+            ],
+        },
+        githubLink: "https://github.com/matiasagbenitez/openai-assistant",
+    },
     // OpenAI Assistant
     {
         imgSrc: "/images/projects/openai.png",
@@ -43,7 +68,7 @@ export const projectsList: Project[] = [
             en: "Application that integrates the OpenAI API to generate different types of output.",
             es: "Aplicación que integra la API de OpenAI para generar distintos tipos de salida.",
         },
-        tags: ["nestjs", "react", "tailwindcss", "axios"],
+        tags: ["typescript", "nestjs", "react", "tailwindcss", "axios"],
         description: {
             en: [
                 "This project was developed with the goal of learning how to use the OpenAI API. It is a web application that allows interaction with different OpenAI language models and visualizes the generated responses. React.js was used for the frontend and NestJS for the backend.",
@@ -68,7 +93,7 @@ export const projectsList: Project[] = [
             en: "TanstackQuery project to manage queries, cache, mutations and subscriptions.",
             es: "TanstackQuery para gestionar consultas, caché, mutaciones y suscripciones.",
         },
-        tags: ["react", "tanstack", "tailwindcss", "axios"],
+        tags: ["typescript", "react", "tanstack", "tailwindcss", "axios"],
         description: {
             en: [
                 "This project is designed to explore the functionality of the TanstackQuery library. It features a simple application that fetches data from a JSON server and displays it in a list. Users can click on items to view additional details. The application leverages TanstackQuery to efficiently handle data fetching and caching.",
@@ -93,7 +118,7 @@ export const projectsList: Project[] = [
             en: "TanstackQuery for managing GitHub issues with caching, pagination, and filtering.",
             es: "TanstackQuery para gestionar issues de GitHub con caché, paginación y filtros.",
         },
-        tags: ["react", "tanstack", "tailwindcss", "axios"],
+        tags: ["typescript", "react", "tanstack", "tailwindcss", "axios"],
         description: {
             en: [
                 "This repository is created to explore the core features of TanstackQuery. It fetches GitHub issues from the Facebook repository and displays them in a list with filterable navigation and detailed views. By using prefetchQuery and setQueryData to manage cache updates, it efficiently handles complex object states while supporting pagination and infinite scrolling for an enhanced user experience. This project is perfect for learning how to leverage Tanstack Query’s advanced data management capabilities.",
@@ -159,7 +184,7 @@ export const projectsList: Project[] = [
             en: "App that integrates Mapbox to review Context API fundamentals.",
             es: "Aplicación que integra Mapbox para repasar fundamentos de Context API.",
         },
-        tags: ["react", "mapbox", "axios"],
+        tags: ["typescript", "react", "mapbox", "axios"],
         description: {
             en: [
                 "Mapify is a web application that was developed quickly and easily to review fundamental concepts of React's Context API along with hooks like useReducer and useRef, using the mapbox API for map visualization. It allows location searches and marking points on the map, as well as the ability to create a route between two points.",
