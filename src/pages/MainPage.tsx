@@ -8,14 +8,11 @@ import { useGSAP } from "@gsap/react";
  */
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-/**
- * Components
- */
-import { Work } from "../components/Work";
+
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 
-import { Header, Hero, About, Skills, SoftSkills } from "../components";
+import { Header, Hero, About, Skills, SoftSkills, Projects } from "../components";
 
 export const MainPage = () => {
   useGSAP(() => {
@@ -45,7 +42,7 @@ export const MainPage = () => {
         <About />
         <Skills />
         <SoftSkills />
-        <Work />
+        <Projects />
         <Contact />
       </main>
       <Footer />

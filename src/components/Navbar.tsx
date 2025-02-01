@@ -66,6 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navOpen }) => {
     { label: { en: "Home", es: "Inicio" }, link: "#home", className: "nav-link active", ref: lastActiveLink },
     { label: { en: "About", es: "Sobre mí" }, link: "#about", className: "nav-link" },
     { label: { en: "Skills", es: "Habilidades" }, link: "#skills", className: "nav-link" },
+    { label: { en: "Projects", es: "Proyectos" }, link: "#projects", className: "nav-link" },
   ];
 
   return (

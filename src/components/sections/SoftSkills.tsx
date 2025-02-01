@@ -25,16 +25,15 @@ export const SoftSkills = () => {
 
         <p className="text-zinc-400 mt-3 mb-5">{softSkills[lang].subtitle}</p>
 
-        <div className="grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          {softSkills[lang].skills.map((item, key) => (
-            <span
-              key={key}
-              className="bg-zinc-800 px-3 py-1 rounded-lg"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
+        <ul className="list-disc list-inside bg-zinc-50/5 py-3 px-5 rounded-lg">
+          <div className="grid gap-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            {softSkills[lang].skills.map((item, key) => (
+              <li key={key} className="">
+                {item}
+              </li>
+            ))}
+          </div>
+        </ul>
       </div>
     </section>
   );
