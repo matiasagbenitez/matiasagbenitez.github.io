@@ -5,28 +5,48 @@ interface HeroDataInterface {
     title: string;
     name: string;
     subtitle: string;
-    subtitle2: string;
-    subtitle3: string;
+    content: {
+        text: string;
+        bold?: boolean;
+        block?: boolean;
+    }[];
     download: string;
 }
 
+
 export const heroData: Record<LangType, HeroDataInterface> = {
     es: {
-        welcome: "Bienvido a mi portafolio!",
-        title: "Hola! Mi nombre es",
+        welcome: "Bienvenido!",
+        title: "Hola! Soy",
         name: "Matías.",
-        subtitle: "Licenciado en Sistemas de Información.",
-        subtitle2: "Desarrollador web full stack en la nube",
-        subtitle3: "con experiencia en el desarrollo de soluciones completas: planificación, análisis, diseño, desarrollo, pruebas e implementación.",
+        subtitle: "Lic. Sistemas de Información | Desarrollador Web Full Stack | 🇦🇷",
+        content: [
+            { text: "Aporto una sólida capacidad de " },
+            { text: "análisis y diseño ", bold: true },
+            { text: "para crear aplicaciones bien estructuradas, optimizadas y alineadas con buenas prácticas de desarrollo.", block: true },
+            { text: "Me motiva buscar soluciones para " },
+            { text: "problemas del mundo real ", bold: true },
+            { text: "a través de la programación, combinando lógica, creatividad y eficiencia. Siempre en busca de " },
+            { text: "nuevos desafíos ", bold: true },
+            { text: "y oportunidades de aprendizaje." },
+        ],
         download: "Descargar CV",
     },
     en: {
-        welcome: "Welcome to my portfolio!",
-        title: "Hi! My name is",
+        welcome: "Welcome!",
+        title: "Hi! I'm",
         name: "Matías.",
-        subtitle: "Information Systems Graduate.",
-        subtitle2: "Cloud full stack web developer",
-        subtitle3: "with experience in the development of complete solutions: planning, analysis, design, development, testing and implementation.",
+        subtitle: "BSc in Information Systems | Full Stack Web Developer | 🇦🇷",
+        content: [
+            { text: "I bring a solid capacity for " },
+            { text: "analysis and design ", bold: true },
+            { text: "to create well-structured, optimized applications aligned with good development practices.", block: true },
+            { text: "I'm motivated to find solutions for " },
+            { text: "real-world problems ", bold: true },
+            { text: "through programming, combining logic, creativity, and efficiency. Always looking for " },
+            { text: "new challenges ", bold: true },
+            { text: "and learning opportunities." },
+        ],
         download: "Download CV",
     },
 }

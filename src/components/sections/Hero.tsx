@@ -8,20 +8,26 @@ export const Hero = () => {
     <section id="home" className="pt-24 lg:pt-28 pb-8">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
-          <span className="text-sky-400 lg:text-lg tracking-wide">
+          <span className="text-stone-400 lg:text-lg tracking-wide">
             {heroData[lang].welcome}
           </span>
 
           <h2 className="text-4xl lg:text-6xl font-bold my-8">
             {heroData[lang].title}{" "}
-            <b className="text-sky-400">{heroData[lang].name}</b>
+            <b className="text-stone-400">{heroData[lang].name}</b>
           </h2>
+          
+          <p className="font-bold mb-0">
+            <b className="text-gray-400">{heroData[lang].subtitle}</b>
+          </p>
 
-          <div className="my-10">
-            <p className="text-lg lg:text-xl text-zinc-400 my-8">
-              {heroData[lang].subtitle}{" "}
-              <b className="text-sky-400">{heroData[lang].subtitle2}</b>{" "}
-              {heroData[lang].subtitle3}
+          <div className="mt-6 mb-12">
+            <p className="text-lg lg:text-lg text-zinc-400">
+              {heroData[lang].content?.map(({ text, block, bold }, key) => (
+                <span key={key} className={block ? "block mb-4" : ""}>
+                  {bold ? <b key={key}>{text}</b> : text}
+                </span>
+              ))}
             </p>
           </div>
 
@@ -52,7 +58,7 @@ export const Hero = () => {
         </div>
 
         <div className="hidden lg:block">
-          <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400/40 to-65% rounded-[60px] overflow-hidden">
+          <figure className="w-full max-w-[480px] ml-auto bg-gradient-to-t from-stone-400 via-25% via-stone-400/40 to-65% rounded-[60px] overflow-hidden">
             <img
               src="/images/hero.png"
               width={656}

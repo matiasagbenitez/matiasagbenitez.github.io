@@ -1,44 +1,38 @@
 import { useContext } from "react";
 import { LangContext } from "../../context/lang";
-import { aboutData } from "../../data/about";
+import { aboutData, educationData } from "../../data/about";
 
 export const About = () => {
   const { lang } = useContext(LangContext);
 
   return (
-    <section id="about" className="py-8">
-      <div className="container">
-        <div className="bg-zinc-800/50 p-7 rounded-2xl reveal-up">
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl ">
-            {aboutData[lang].text1}
-          </p>
-          <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl">
-            {aboutData[lang].text2}
-          </p>
+    <section id="about" className="py-6">
+      <div className="container ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-zinc-800 p-6 rounded-lg reveal-up">
+          <div>
+            <h2 className="headline-2">{aboutData[lang].title}</h2>
+            <div className="mt-4">
+              {aboutData[lang].content.map((text, key) => (
+                <p key={key} className="text-zinc-300 mt-4">
+                  {text}
+                </p>
+              ))}
+            </div>
+          </div>
 
-          <div className="flex flex-wrap items-center gap-4 md:gap-7">
-            {aboutData[lang].items.map(({ number, label }, key) => (
-              <div key={key}>
-                <div className="flex items-center md:mb-2">
-                  <span className="text-2xl font-semibold md:text-4xl">
-                    {number}
-                  </span>
-                  <span className="text-sky-400 font-semibold md:text-3xl">
-                    +
-                  </span>
+          <div className="text-start lg:text-right">
+            <h2 className="headline-2">{educationData[lang].title}</h2>
+            <div className="mt-4">
+              {educationData[lang].content.map((text, key) => (
+                <div key={key} className="mb-4">
+                  <h3 className="headline-3 text-zinc-400 font-bold text-sm">
+                    {text.years}
+                  </h3>
+                  <p className="font-bold">{text.title}</p>
+                  <p className="text-sm font-light">{text.institution}</p>
                 </div>
-
-                <p className="text-sm text-zinc-400">{label}</p>
-              </div>
-            ))}
-
-            <img
-              src="/images/logo.svg"
-              alt="Logo"
-              width={30}
-              height={30}
-              className="ml-auto md:w-[40px] md:h-[40px]"
-            />
+              ))}
+            </div>
           </div>
         </div>
       </div>

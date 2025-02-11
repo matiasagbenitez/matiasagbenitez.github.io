@@ -21,11 +21,11 @@ interface SkillsTitles {
 export const skillsTitles: Record<LangType, SkillsTitles> = {
     en: {
         title: "Technical skills",
-        subtitle: "These are some of the technologies and tools I have worked with and can use in your projects.",
+        subtitle: "These are some of the technologies and tools I have worked with and can use in projects.",
     },
     es: {
         title: "Habilidades técnicas",
-        subtitle: "Estas son algunas de las tecnologías y herramientas con las que he trabajado y puedo usar en tus proyectos.",
+        subtitle: "Estas son algunas de las tecnologías y herramientas con las que he trabajado y puedo usar en proyectos.",
     },
 };
 
@@ -74,23 +74,17 @@ export const items: Skill[] = [
                     desc: "Framework de Node",
                 },
             },
-        ],
-    },
-    {
-        en: { area: "APIs & Communication" },
-        es: { area: "APIs y Comunicación" },
-        skills: [
-            {
-                imgSrc: "/images/skills/graphql.svg",
-                label: "GraphQL",
-                en: { desc: "API Query Language" },
-                es: { desc: "Lenguaje de Consulta API" },
-            },
             {
                 imgSrc: "/images/skills/rest-api.svg",
                 label: "REST",
                 en: { desc: "API Architecture" },
                 es: { desc: "Arquitectura de API" },
+            },
+            {
+                imgSrc: "/images/skills/graphql.svg",
+                label: "GraphQL",
+                en: { desc: "API Query Language" },
+                es: { desc: "Lenguaje de Consulta API" },
             },
             {
                 imgSrc: "/images/skills/socket-io.svg",
@@ -125,48 +119,6 @@ export const items: Skill[] = [
         ],
     },
     {
-        en: { area: "Databases & ORMs" },
-        es: { area: "Bases de Datos y ORMs" },
-        skills: [
-            {
-                imgSrc: "/images/skills/mongodb.svg",
-                label: "MongoDB + Mongoose",
-                en: { desc: "NoSQL Database" },
-                es: { desc: "Base de Datos NoSQL" },
-            },
-            {
-                imgSrc: "/images/skills/mysql.svg",
-                label: "MySQL",
-                en: { desc: "Relational Database" },
-                es: { desc: "Base de Datos Relacional" },
-            },
-            {
-                imgSrc: "/images/skills/postgresql.svg",
-                label: "PostgreSQL",
-                en: { desc: "Relational Database" },
-                es: { desc: "Base de Datos Relacional" },
-            },
-            {
-                imgSrc: "/images/skills/sequelize.svg",
-                label: "Sequelize",
-                en: { desc: "ORM" },
-                es: { desc: "ORM" },
-            },
-            {
-                imgSrc: "/images/skills/typeorm.svg",
-                label: "TypeORM",
-                en: { desc: "ORM" },
-                es: { desc: "ORM" },
-            },
-            {
-                imgSrc: "/images/skills/prisma.svg",
-                label: "Prisma",
-                en: { desc: "ORM" },
-                es: { desc: "ORM" },
-            },
-        ],
-    },
-    {
         en: { area: "Frontend Development" },
         es: { area: "Desarrollo Frontend" },
         skills: [
@@ -189,14 +141,14 @@ export const items: Skill[] = [
                 es: { desc: "Enrutamiento" },
             },
             {
-                imgSrc: "/images/skills/redux.svg",
-                label: "Redux",
+                imgSrc: "/images/skills/zustand.svg",
+                label: "Zustand",
                 en: { desc: "State Management" },
                 es: { desc: "Gestión de Estado" },
             },
             {
-                imgSrc: "/images/skills/zustand.svg",
-                label: "Zustand",
+                imgSrc: "/images/skills/redux.svg",
+                label: "Redux Toolkit",
                 en: { desc: "State Management" },
                 es: { desc: "Gestión de Estado" },
             },
@@ -206,18 +158,6 @@ export const items: Skill[] = [
                 en: { desc: "Utilities" },
                 es: { desc: "Utilidades" },
             },
-            {
-                imgSrc: "/images/skills/storybook.svg",
-                label: "Storybook",
-                en: { desc: "Component Library" },
-                es: { desc: "Biblioteca Componentes" },
-            },
-        ],
-    },
-    {
-        en: { area: "Styling & Design" },
-        es: { area: "Estilos y Diseño" },
-        skills: [
             {
                 imgSrc: "/images/skills/tailwindcss.svg",
                 label: "Tailwind CSS",
@@ -241,6 +181,42 @@ export const items: Skill[] = [
                 label: "Figma",
                 en: { desc: "Design Tool" },
                 es: { desc: "Herramienta de Diseño" },
+            },
+            {
+                imgSrc: "/images/skills/storybook.svg",
+                label: "Storybook",
+                en: { desc: "Component Library" },
+                es: { desc: "Biblioteca Componentes" },
+            },
+        ],
+    },
+    {
+        en: { area: "Databases" },
+        es: { area: "Bases de Datos" },
+        skills: [
+            {
+                imgSrc: "/images/skills/mysql.svg",
+                label: "MySQL",
+                en: { desc: "Relational Database" },
+                es: { desc: "Base de Datos Relacional" },
+            },
+            {
+                imgSrc: "/images/skills/postgresql.svg",
+                label: "PostgreSQL",
+                en: { desc: "Relational Database" },
+                es: { desc: "Base de Datos Relacional" },
+            },
+            {
+                imgSrc: "/images/skills/mongodb.svg",
+                label: "MongoDB",
+                en: { desc: "NoSQL Database" },
+                es: { desc: "Base de Datos NoSQL" },
+            },
+            {
+                imgSrc: "/images/skills/firestore.svg",
+                label: "Firestore",
+                en: { desc: "NoSQL Database" },
+                es: { desc: "Base de Datos NoSQL" },
             },
         ],
     },

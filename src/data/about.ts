@@ -1,20 +1,76 @@
 import { LangType } from "../context/lang";
 
 interface AboutDataInterface {
-    text1: string;
-    text2: string;
-    items: { number: number; label: string }[];
+    title: string;
+    content: string[];
 }
 
 export const aboutData: Record<LangType, AboutDataInterface> = {
     es: {
-        text1: "¡Hola! Soy Matías Agustín Benítez, Analista en Sistemas de Computación y Licenciado en Sistemas de Información, graduado de la Universidad Nacional de Misiones 🇦🇷. Cuento con experiencia en el desarrollo de aplicaciones web completas utilizando distintas tecnologías modernas.",
-        text2: "Me considero un profesional comprometido con la calidad y la excelencia, buscando contribuir en equipos de IT donde pueda seguir creciendo y aportar mis habilidades. Siempre busco definir metas claras y asegurar calidad en mi trabajo.",
-        items: [{ number: 15, label: "Proyectos completados" }, { number: 2, label: "Años de experiencia" }, { number: 10, label: "Certificaciones" }],
+        title: "Sobre mí",
+        content: [
+            "¡Hola! 👋 Soy Matías Benítez, un desarrollador enfocado en la resolución de problemas a través del código. Disfruto diseñar y construir aplicaciones eficientes, combinando análisis, creatividad y buenas prácticas de desarrollo.",
+            "Mi foco está en la calidad en el trabajo y la mejora continua tanto personal como interpersonal, buscando siempre aportar valor en equipos de IT y enfrentar nuevos desafíos que impulsen mi crecimiento profesional.",
+        ],
     },
     en: {
-        text1: "Hi! I'm Matías Agustín Benítez, Computer Systems Analyst and Information Systems Graduate, graduated from the National University of Misiones 🇦🇷. I have experience in the development of complete web applications using different modern technologies.",
-        text2: "I consider myself a professional committed to quality and excellence, looking to contribute in IT teams where I can continue to grow and contribute my skills. I always seek to define clear goals and ensure quality in my work.",
-        items: [{ number: 15, label: "Completed projects" }, { number: 2, label: "Years of experience" }, { number: 10, label: "Certifications" }],
+        title: "About Me",
+        content: [
+            "Hi! 👋 I'm Matías Benítez, a developer focused on solving problems through code. I enjoy designing and building efficient applications, combining analysis, creativity, and good development practices.",
+            "My focus is on quality work and continuous improvement both personally and interpersonally, always seeking to add value in IT teams and face new challenges that drive my professional growth.",
+        ],
     },
+}
+
+interface EducationDataInterface {
+    title: string;
+    subtitle?: string;
+    content: {
+        years: string;
+        title: string;
+        institution: string;
+    }[];
+}
+
+export const educationData: Record<LangType, EducationDataInterface> = {
+    es: {
+        title: "Educación",
+        content: [
+            {
+                years: "mar. 2018  - nov. 2023",
+                title: "Licenciatura en Sistemas de Información",
+                institution: "Universidad Nacional de Misiones",
+            },
+            {
+                years: "mar. 2018  - mar. 2023",
+                title: "Analista en Sistemas de Computación",
+                institution: "Universidad Nacional de Misiones",
+            },
+            {
+                years: "mar. 2011  - dic. 2011",
+                title: "Técnico en Equipos e Instalaciones Electromecánicas",
+                institution: "Instituto Línea Cuchilla",
+            },
+        ],
+    },
+    en: {
+        title: "Education",
+        content: [
+            {
+                years: "mar. 2018  - nov. 2023",
+                title: "BSc in Information Systems",
+                institution: "National University of Misiones",
+            },
+            {
+                years: "mar. 2018  - mar. 2023",
+                title: "Computer Systems Analyst",
+                institution: "National University of Misiones",
+            },
+            {
+                years: "mar. 2011  - dec. 2011",
+                title: "Electromechanical Equipment and Installations Technician",
+                institution: "Instituto Línea Cuchilla",
+            },
+        ],
+    }
 }

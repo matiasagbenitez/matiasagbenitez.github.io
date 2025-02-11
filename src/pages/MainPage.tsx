@@ -14,10 +14,11 @@ import { Footer } from "../components/Footer";
 import {
   Header,
   Hero,
-  About,
   Skills,
   SoftSkills,
   Projects,
+  About,
+  Experience,
 } from "../components";
 
 export const MainPage = () => {
@@ -46,8 +47,9 @@ export const MainPage = () => {
       <main>
         <Hero />
         <About />
-        <Skills />
+        <Experience />
         <SoftSkills />
+        <Skills />
         <Projects />
         <Contact />
       </main>
