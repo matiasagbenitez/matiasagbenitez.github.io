@@ -5,3 +5,5 @@ export * from './Skills';
 export * from './SoftSkills';
 export * from './Projects';
 export * from './Experience';
+export * from './Contact';
+export * from './Footer';

@@ -11,12 +11,13 @@ interface HeroDataInterface {
         block?: boolean;
     }[];
     download: string;
+    availableForWork: string;
 }
 
 
 export const heroData: Record<LangType, HeroDataInterface> = {
     es: {
-        welcome: "Bienvenido!",
+        welcome: "Bienvenido a mi sitio web!",
         title: "Hola! Soy",
         name: "Matías.",
         subtitle: "Lic. Sistemas de Información | Desarrollador Web Full Stack | 🇦🇷",
@@ -31,9 +32,10 @@ export const heroData: Record<LangType, HeroDataInterface> = {
             { text: "y oportunidades de aprendizaje." },
         ],
         download: "Descargar CV",
+        availableForWork: "Disponible para trabajar",
     },
     en: {
-        welcome: "Welcome!",
+        welcome: "Welcome to my website!",
         title: "Hi! I'm",
         name: "Matías.",
         subtitle: "BSc in Information Systems | Full Stack Web Developer | 🇦🇷",
@@ -48,6 +50,7 @@ export const heroData: Record<LangType, HeroDataInterface> = {
             { text: "and learning opportunities." },
         ],
         download: "Download CV",
+        availableForWork: "Available for work",
     },
 }
 
@@ -79,9 +82,9 @@ export const heroHrefs: HrefButtonInterface[] = [
         icon: "fa-brands fa-linkedin",
     },
     {
-        label: "Scroll down",
-        href: "#about",
-        blank: false,
-        icon: "fa-solid fa-arrow-down",
+        label: "WhatsApp",
+        href: "https://wa.me/5493743489088",
+        blank: true,
+        icon: "fa-brands fa-whatsapp",
     },
 ];

@@ -7,10 +7,6 @@ import { useGSAP } from "@gsap/react";
  * Register gsap plugins
  */
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-import { Contact } from "../components/Contact";
-import { Footer } from "../components/Footer";
-
 import {
   Header,
   Hero,
@@ -19,6 +15,8 @@ import {
   Projects,
   About,
   Experience,
+  Contact,
+  Footer,
 } from "../components";
 
 export const MainPage = () => {

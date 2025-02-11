@@ -8,11 +8,11 @@ interface ProjectTitles {
 export const projectsTitles: Record<LangType, ProjectTitles> = {
     en: {
         title: "Projects",
-        subtitle: "These are some of the side projects I have worked on and that I can show you.",
+        subtitle: "These are some of the side projects I have worked on while learning new technologies.",
     },
     es: {
         title: "Proyectos",
-        subtitle: "Estos son algunos de los proyectos secundarios en los que he trabajado y que puedo mostrarte.",
+        subtitle: "Estos son algunos de los proyectos secundarios en los que he trabajado mientras aprendía nuevas tecnologías.",
     },
 };
 

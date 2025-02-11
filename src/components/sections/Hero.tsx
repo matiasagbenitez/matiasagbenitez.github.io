@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { heroData, heroHrefs } from "../../data/hero";
+import { heroData } from "../../data/hero";
 import { LangContext } from "../../context/lang";
+import { Socials } from "../Socials";
 
 export const Hero = () => {
   const { lang } = useContext(LangContext);
@@ -8,15 +9,20 @@ export const Hero = () => {
     <section id="home" className="pt-24 lg:pt-28 pb-8">
       <div className="container items-center lg:grid lg:grid-cols-2 lg:gap-10">
         <div>
-          <span className="text-stone-400 lg:text-lg tracking-wide">
-            {heroData[lang].welcome}
-          </span>
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 text-zinc-400 tracking-wide">
+              <span className="relative w-3 h-3 rounded-full bg-emerald-400 me-1">
+                <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping"></span>
+              </span>
+              {heroData[lang].availableForWork}
+            </div>
+          </div>
 
           <h2 className="text-4xl lg:text-6xl font-bold my-8">
             {heroData[lang].title}{" "}
             <b className="text-stone-400">{heroData[lang].name}</b>
           </h2>
-          
+
           <p className="font-bold mb-0">
             <b className="text-gray-400">{heroData[lang].subtitle}</b>
           </p>
@@ -31,7 +37,7 @@ export const Hero = () => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4">
             <button
               className="btn btn-primary py-2 px-4 rounded-xl"
               onClick={() => window.open(`/docs/cv-${lang}.pdf`, "_blank")}
@@ -40,20 +46,7 @@ export const Hero = () => {
               <i className="fas fa-download text-lg"></i>
             </button>
 
-            <div className="flex items-center gap-3">
-              {heroHrefs.map(({ label, href, icon, blank, showLabel }, key) => (
-                <a
-                  key={key}
-                  href={href}
-                  title={label}
-                  className="btn-outline py-2 px-4 rounded-xl"
-                  target={blank ? "_blank" : "_self"}
-                >
-                  {showLabel && <span className="me-2">{label}</span>}
-                  <i className={icon + " text-lg"}></i>
-                </a>
-              ))}
-            </div>
+            <Socials />
           </div>
         </div>
 
