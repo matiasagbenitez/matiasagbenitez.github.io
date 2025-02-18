@@ -80,7 +80,7 @@ export const experienceData: Record<LangType, ExperienceDataInterface> = {
                 tags: ["typescript", "expressjs", "mysql", "react", "nodejs", "bootstrap", "axios"],
             },
             {
-                title: "Registro Único Deportivo (RID) — Municipalidad de San Vicente, Misiones, Argentina",
+                title: "Registro Informático Deportivo (RID) — Municipalidad de San Vicente, Misiones, Argentina",
                 features: [
                     "Registro de deportistas, entrenadores y árbitros locales",
                     "Registro de disciplinas deportivas y categorías",

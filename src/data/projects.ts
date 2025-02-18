@@ -60,6 +60,31 @@ export const projectsList: Project[] = [
         },
         githubLink: "https://github.com/matiasagbenitez/openai-assistant",
     },
+    {
+        imgSrc: "/images/projects/startups.png",
+        title: "PitchExpress",
+        subtitle: {
+            en: "Application made with Next.js and Sanity to know startups and their details.",
+            es: "Aplicación hecha con Next.js y Sanity para conocer startups y sus detalles.",
+        },
+        tags: ["typescript", "nextjs", "tailwindcss", "sanity"],
+        description: {
+            en: [
+                "This project was developed to reinforce concepts of Next.js and Sanity. It is a web application that allows users to explore startups and learn about their details. Next.js was used for the frontend, while Sanity served as the CMS for content management.",
+                "The main objective was to practice different rendering methods in Next.js, including static rendering, server-side rendering, and client-side rendering. Additionally, the project focused on creating dynamic pages and integrating a CMS for managing application data.",
+                "Sanity was used to store startup information, with queries performed using GROQ, a query language specifically designed for this CMS.",
+                "Authentication was implemented using Auth.js and GitHub. To register a startup, users must log in with their GitHub account. Once authenticated, they can add a new startup by providing details such as name, description, website, and category, among other information."
+            ],            
+            es: [
+                "Este proyecto fue desarrollado para reforzar conceptos de Next.js y Sanity. Es una aplicación web que permite explorar startups y conocer sus detalles. Se utilizó Next.js para el frontend y Sanity como CMS para la gestión de contenido.",
+                "El objetivo principal fue practicar los distintos métodos de renderizado en Next.js, incluyendo el renderizado estático, el renderizado del lado del servidor y el renderizado del lado del cliente. Además, se trabajó en la creación de páginas dinámicas y en la integración de un CMS para gestionar los datos de la aplicación.",
+                "Sanity se empleó para almacenar la información de las startups, mientras que las consultas se realizaron con GROQ, un lenguaje de consulta diseñado específicamente para este CMS.",
+                "La autenticación se implementó con Auth.js y GitHub. Para registrar una startup, el usuario debe iniciar sesión con su cuenta de GitHub. Una vez autenticado, puede agregar una nueva startup proporcionando información como nombre, descripción, sitio web y categoría, entre otros datos."
+            ],            
+        },
+        githubLink: "https://github.com/matiasagbenitez/startups",
+        projectLink: "https://startups-lyart.vercel.app/",
+    },
     // React Query Store
     {
         imgSrc: "/images/projects/react-query-store.png",

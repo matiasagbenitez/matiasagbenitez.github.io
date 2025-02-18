@@ -40,7 +40,7 @@ export const Hero = () => {
           <div className="flex flex-col md:flex-row items-center gap-4">
             <button
               className="btn btn-primary py-2 px-4 rounded-xl"
-              onClick={() => window.open(`/docs/cv-${lang}.pdf`, "_blank")}
+              onClick={() => window.open(`/docs/CV-Benitez-Matias-${lang}.pdf`, "_blank")}
             >
               {heroData[lang].download}
               <i className="fas fa-download text-lg"></i>
